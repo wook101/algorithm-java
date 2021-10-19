@@ -11,15 +11,15 @@ class Main {
 		int n = Integer.parseInt(input);
 		int count = 0;
 		for(int num=1;num<n;num++){
-				String st_num = String.valueOf(num);
+			String st_num = String.valueOf(num);
 			for(int i=0;i<st_num.length();i++){
-						if (st_num.charAt(i)=='0') 
-							continue;
-						if (Character.getNumericValue(st_num.charAt(i))%3==0)
-							count++;
-					}
-			}
-			return count;
+				if (st_num.charAt(i)=='0') 
+					continue;
+				if (Character.getNumericValue(st_num.charAt(i))%3==0)
+					count++;
+				}
 		}
+		return count;
+	}
 		
 }
