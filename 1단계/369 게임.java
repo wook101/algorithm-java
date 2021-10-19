@@ -17,7 +17,7 @@ class Main {
 					continue;
 				if (Character.getNumericValue(st_num.charAt(i))%3==0)
 					count++;
-				}
+			}
 		}
 		return count;
 	}
