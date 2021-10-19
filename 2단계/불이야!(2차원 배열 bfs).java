@@ -12,10 +12,10 @@ class Main {
 		char[][] board = new char[R][C];
 		
 		for(int i=0;i<R;i++){
-				String st = br.readLine();
-				for(int j=0;j<C;j++){
-					board[i][j] = st.charAt(j);	
-				}
+		   String st = br.readLine();
+		   for(int j=0;j<C;j++){
+		     board[i][j] = st.charAt(j);	
+		   } 
 		}
 		
 		System.out.println(bfs(R,C,board));
@@ -27,33 +27,33 @@ class Main {
 		int[][] visited = new int[R][C];
 		
 		for(int i=0;i<R;i++){
-				for(int j=0;j<C;j++){
-					if (board[i][j]=='@'){
-						q.add(new int[]{i,j,0});
-						visited[i][j]=1;
-					}	
-				}
+		   for(int j=0;j<C;j++){
+		      if (board[i][j]=='@'){
+		         q.add(new int[]{i,j,0});
+			 visited[i][j]=1;
+		      }	
+		   }
 		}
 		
 		int[] dx = {0,0,-1,1};
 		int[] dy = {1,-1,0,0};
 		int ret = -1;
 		while(q.peek()!=null){
-			int[] a = q.poll();
-			int x = a[0];
-			int y = a[1];
-			int dist = a[2];
-			
-			for(int i=0;i<4;i++){
-				int rx = x+dx[i];
-				int ry = y+dy[i];
-				if(rx<0 || ry<0 || rx>=R || ry>=C || board[rx][ry]=='#' || visited[rx][ry]==1)
-					continue;
-				if(board[rx][ry]=='&')
-					return dist;
-				q.add(new int[]{rx,ry,dist+1});
-				visited[rx][ry]=1;
-			}
+		   int[] a = q.poll();
+		   int x = a[0];
+		   int y = a[1];
+		   int dist = a[2];
+
+		   for(int i=0;i<4;i++){
+		      int rx = x+dx[i];
+		      int ry = y+dy[i];
+		      if(rx<0 || ry<0 || rx>=R || ry>=C || board[rx][ry]=='#' || visited[rx][ry]==1)
+			   continue;
+		      if(board[rx][ry]=='&')
+			   return dist;
+		      q.add(new int[]{rx,ry,dist+1});
+		      visited[rx][ry]=1;
+		   }
 		}
 		
 		return ret;
