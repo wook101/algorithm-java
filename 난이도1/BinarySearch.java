@@ -21,10 +21,10 @@ class Main {
 				System.out.println(mid+1);
 				return;
 			}
-      else if(arr[mid]<target){
+      			else if(arr[mid]<target){
 				left=mid+1;
 			}
-      else{
+      			else{
 				right=mid-1;
 			}
 		}
