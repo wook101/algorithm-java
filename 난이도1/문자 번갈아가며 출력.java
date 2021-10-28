@@ -2,21 +2,21 @@ import java.io.*;
 class Main {
 	public static void main(String[] args) throws Exception {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		String input = br.readLine();
-		solution(input);
+		String st = br.readLine();
+		solution(st);
 	}
 	static void solution(String st){
-		int s=0;
-		int e=st.length()-1;
-		
-		while(s<e){
-			System.out.print(st.charAt(s));
-			System.out.print(st.charAt(e));
-			s++;
-			e--;
+		StringBuilder sb = new StringBuilder();
+		int left=0;
+		int right=st.length()-1;
+		while(left<right){
+			sb.append(st.charAt(left));
+			sb.append(st.charAt(right));
+			left++;
+			right--;
 		}
 		if (st.length()%2==1)
-			System.out.print(st.charAt(st.length()/2));
-		
+			sb.append(st.charAt(st.length()/2));
+		System.out.print(sb.toString());
 	}
 }
